@@ -23,7 +23,6 @@
   border-style: right;
   border-right-color: lawngreen;
 
-
   /*&:after {*/
   /*visibility: hidden;*/
   /*display: block;*/
@@ -102,7 +101,6 @@ main {
   }
 }
 
-
 h1 {
   text-align: center;
   font-size: 100px;
@@ -124,11 +122,13 @@ html, body {
 
 #wrapper {
   position: relative;
+
   background: dimgrey;
   height: 100%;
 }
 
 p {
+  display: inline;
   color: white;
-  padding: 150px;
+  padding: 0px;
 }

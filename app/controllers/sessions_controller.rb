@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def index
     @user = User.all
-   end
+  end
 
   def new
     @user = User.new
@@ -13,9 +13,6 @@ class SessionsController < ApplicationController
   def create
 
   end
-
-
-
 
 
 end
