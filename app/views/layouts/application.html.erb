@@ -12,17 +12,24 @@
     <div class="logo">
       <%= link_to "Rant.ly", root_path %>
     </div>
-    <div class="login">
-      <%= link_to "Login", login_path %>
-    </div>
-    <div class="join">
-      <%= link_to "Join", new_user_path %>
-    </div>
+    <div class="middle">
 
+    </div>
+    <div class="right">
+      <div class="login">
+        <% if session[:user_id] %>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %>
+      </div>
+      <div class="join">
+        <%= link_to "Join", new_user_path %>
+      </div>
+    </div>
   </div>
 </header>
 <%= yield %>
-
 
 
 </body>

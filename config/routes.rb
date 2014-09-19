@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :rants
   end
   resource :dashboard, controller: :dashboard
+
 end

@@ -1,10 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :ensure_current_user
 
-  def index
-    @user = User.all
-  end
-
   def new
     @user = User.new
   end
@@ -19,6 +15,11 @@ class SessionsController < ApplicationController
       @user.errors[:base] << "Username / password is invalid"
       render :new
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
 
