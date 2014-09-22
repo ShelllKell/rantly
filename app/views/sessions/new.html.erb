@@ -1,19 +1,26 @@
-<%= form_for @user, url: login_path do |f| %>
+<div class="login-box">
 
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
+  <%= form_for @user, url: login_path do |f| %>
 
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+    <h3>Login</h3>
 
-  <div>
-    <%= f.submit "Login" %>
-  </div>
+    <div class="username">
+      <%= f.label :username %>
+    </div>
+    <div class="text-field">
+      <%= f.text_field :username %>
+    </div>
+    <div class="password">
+      <%= f.label :password %>
+    </div>
+    <div class="text-field">
+      <%= f.password_field :password %>
+    </div>
 
+    <div class="button-box">
+      <%= f.submit "LOGIN", :class => 'button' %>
+    </div>
 
+  <% end %>
 
-<% end %>
+</div>

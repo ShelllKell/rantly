@@ -1,3 +1,14 @@
+#wrapper {
+  display: flex;
+  background: dimgrey;
+  padding: 10rem;
+
+}
+
+p {
+  color: white;
+  flex: 1 1 auto;
+}
 
 .container {
   display: flex;
@@ -59,8 +70,6 @@
   flex-direction: column;
   flex: 1 1 auto;
   text-align: left;
-
-
 }
 
 .row {
@@ -68,9 +77,55 @@
   justify-content: space-between;
   & > * {
     flex: 0 0 45%;
-    padding: .25rem ;
-
+    padding: .25rem;
   }
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border: solid black;
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: .75rem;
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.password {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.text-field {
+  padding-bottom: .5rem;
+}
+
+.button {
+  display: flex;
+  text-align: right;
+  font-size: 24pt;
+  width: 400px;
+  height: 60px;
+  background-color: lawngreen;
+  border: solid black;
+}
+
+.flash {
+  padding: 1em;
+  color: green;
+  display: inline;
+  margin: auto;
 }
 
 header {
@@ -112,22 +167,6 @@ html, body {
   padding: 0;
   border: 0;
   height: 100%;
-}
-
-#wrapper {
-  position: relative;
-
-  background: dimgrey;
-  height: 100%;
-}
-
-p {
-  display: inline;
-  color: white;
-  padding: 150px;
-  margin-left: 250px;
-  margin-right: 250px;
-  float: right;
 }
 
 img {
