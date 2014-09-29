@@ -8,6 +8,9 @@ class RantsController < ApplicationController
     @rant = Rant.new
   end
 
+  def create
+    @rant = Rant.new
+  end
 
 
 

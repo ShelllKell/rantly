@@ -1,26 +1,28 @@
-<div class="login-box">
+<div class="gray">
+  <div class="login-box">
 
-  <%= form_for @user, url: login_path do |f| %>
+    <%= form_for @user, url: login_path do |f| %>
 
-    <h3>Login</h3>
+      <h3>Login</h3>
 
-    <div class="username">
-      <%= f.label :username %>
-    </div>
-    <div class="text-field">
-      <%= f.text_field :username %>
-    </div>
-    <div class="password">
-      <%= f.label :password %>
-    </div>
-    <div class="text-field">
-      <%= f.password_field :password %>
-    </div>
+      <div class="username">
+        <%= f.label :username %>
+      </div>
+      <div class="text-field">
+        <%= f.text_field :username %>
+      </div>
+      <div class="password">
+        <%= f.label :password %>
+      </div>
+      <div class="text-field">
+        <%= f.password_field :password %>
+      </div>
 
-    <div class="button-box">
-      <%= f.submit "LOGIN", :class => 'button' %>
-    </div>
+      <div class="button-box">
+        <%= f.submit "LOGIN", :class => 'button' %>
+      </div>
 
-  <% end %>
+    <% end %>
 
+  </div>
 </div>

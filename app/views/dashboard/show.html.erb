@@ -1,4 +1,33 @@
+<div class="dashboard">
+  <div class="rant-input-left">
+    <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
+    <br>
+    <div class="user">
+    <%= link_to @user.username %>
+    </div>
+    <div>
+      <%= form_for [@user, @rant] do |f| %>
+        <div class="about">
+          <%= f.label :topic, "A rant about:" %>
+          <br>
+          <%= f.text_field :topic, autofocus: true %>
+        </div>
+        <br>
 
+        <div>
+          <%= f.label :rant, "Rant:" %>
+          <br>
+          <%= f.text_area :rant, :rows => 20, autofocus: true %>
+        </div>
+        <br>
 
-
-<%= @user.username %>
+        <div>
+          <%= f.submit "RANT", class: 'button' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="latest-rants">
+    <h3>Latest Rants</h3>
+  </div>
+</div>

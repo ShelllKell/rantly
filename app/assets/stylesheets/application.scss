@@ -10,6 +10,10 @@ p {
   flex: 1 1 auto;
 }
 
+.gray {
+  background-color: lightgrey;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -52,6 +56,23 @@ p {
   text-align: center;
 }
 
+.dashboard {
+  display: flex;
+  flex-direction: row;
+}
+
+.rant-input-left {
+  flex: 1 1 auto;
+  background-color: gray;
+  text-align: center;
+}
+
+.latest-rants {
+  flex: 2 1 auto;
+  background-color: white;
+  text-align: center;
+}
+
 .register-box {
   display: flex;
   flex-direction: column;
@@ -59,9 +80,10 @@ p {
   justify-content: space-between;
   border: solid black;
   margin-top: 50px;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 300px;
+  margin-right: 300px;
   padding: .75rem;
+  background-color: white;
 
 }
 
@@ -91,6 +113,8 @@ p {
   margin-left: 250px;
   margin-right: 250px;
   padding: .75rem;
+  background-color: white;
+
 }
 
 .username {
@@ -111,14 +135,34 @@ p {
   padding-bottom: .5rem;
 }
 
+.bio {
+  display: flex;
+
+}
+
+.bio-box {
+  display: flex;
+  padding-bottom: .5rem;
+}
+
+.time {
+  display: flex;
+}
+
+.frequency {
+  display: flex;
+  justify-content: space-around;
+}
+
 .button {
   display: flex;
-  text-align: right;
+  text-align: center;
   font-size: 24pt;
   width: 400px;
   height: 60px;
   background-color: lawngreen;
   border: solid black;
+
 }
 
 .flash {
@@ -170,5 +214,14 @@ html, body {
 }
 
 img {
-  float: left;
+//  float: left;
+}
+
+.about {
+  border-top: solid white;
+  padding-top: 1rem;
+}
+
+.user {
+  padding: .5rem;
 }
