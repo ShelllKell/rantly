@@ -2,7 +2,6 @@
   display: flex;
   background: dimgrey;
   padding: 10rem;
-
 }
 
 p {
@@ -11,7 +10,7 @@ p {
 }
 
 .gray {
-  background-color: lightgrey;
+  background-color: grey;
 }
 
 .container {
@@ -56,6 +55,118 @@ p {
   text-align: center;
 }
 
+.register-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border: solid black;
+  margin-top: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: .75rem;
+  background-color: white;
+
+  .doubles {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    text-align: left;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    & > * {
+      flex: 0 0 45%;
+      padding: .25rem;
+    }
+  }
+
+  .bio {
+    display: flex;
+  }
+
+  .bio-box {
+    display: flex;
+    padding-bottom: .5rem;
+  }
+
+  #user_bio {
+    width: 100%;
+  }
+
+  .time {
+    display: flex;
+    padding-bottom: .5rem;
+  }
+
+  .frequency {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: .5rem;
+  }
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border: solid black;
+  margin-top: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: .75rem;
+  background-color: white;
+
+  .username {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    text-align: left;
+  }
+
+  .password {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    text-align: left;
+  }
+
+  #user_username {
+    width: 100%;
+  }
+
+  #user_password {
+    width: 100%;
+    margin-bottom: 1rem
+  }
+}
+
+.text-field {
+  padding-bottom: .5rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  text-align: center;
+  font-size: 24pt;
+  width: 100%;
+  height: 60px;
+  background-color: lawngreen;
+  border: solid black;
+
+}
+
+.flash {
+  padding: 1em;
+  color: green;
+  display: inline;
+  margin: auto;
+}
+
 .dashboard {
   display: flex;
   flex-direction: row;
@@ -71,105 +182,6 @@ p {
   flex: 2 1 auto;
   background-color: white;
   text-align: center;
-}
-
-.register-box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  border: solid black;
-  margin-top: 50px;
-  margin-left: 300px;
-  margin-right: 300px;
-  padding: .75rem;
-  background-color: white;
-
-}
-
-.doubles {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  text-align: left;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  & > * {
-    flex: 0 0 45%;
-    padding: .25rem;
-  }
-}
-
-.login-box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  border: solid black;
-  margin-top: 50px;
-  margin-left: 250px;
-  margin-right: 250px;
-  padding: .75rem;
-  background-color: white;
-
-}
-
-.username {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  text-align: left;
-}
-
-.password {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  text-align: left;
-}
-
-.text-field {
-  padding-bottom: .5rem;
-}
-
-.bio {
-  display: flex;
-
-}
-
-.bio-box {
-  display: flex;
-  padding-bottom: .5rem;
-}
-
-.time {
-  display: flex;
-}
-
-.frequency {
-  display: flex;
-  justify-content: space-around;
-}
-
-.button {
-  display: flex;
-  text-align: center;
-  font-size: 24pt;
-  width: 400px;
-  height: 60px;
-  background-color: lawngreen;
-  border: solid black;
-
-}
-
-.flash {
-  padding: 1em;
-  color: green;
-  display: inline;
-  margin: auto;
 }
 
 header {
@@ -211,10 +223,11 @@ html, body {
   padding: 0;
   border: 0;
   height: 100%;
+  background-color: gray;
 }
 
 img {
-//  float: left;
+  //  float: left;
 }
 
 .about {
