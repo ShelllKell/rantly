@@ -2,10 +2,12 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
   end
 
   def show
     @user = User.find(params[:id])
+    @rant = Rant.new
   end
 
   def new
@@ -20,7 +22,21 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
 
+  def edit
+    @rant = Rant.new
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(username: params[:user][:username],
+                            first_name: params[:user][:first_name],
+                            last_name: params[:user][:last_name],
+                            bio: params[:user][:bio],
+                            password: params[:user][:password])
+    redirect_to dashboard_path(@user)
   end
 
   private

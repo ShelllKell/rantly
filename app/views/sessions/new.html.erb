@@ -1,10 +1,11 @@
 <div class="gray">
   <div class="login-box">
 
+    <h3>Login</h3>
+
+    <%= flash[:error] if flash[:error] %>
+
     <%= form_for @user, url: login_path do |f| %>
-
-      <h3>Login</h3>
-
       <div class="username">
         <%= f.label :username %>
       </div>
@@ -24,5 +25,7 @@
 
     <% end %>
 
+
   </div>
 </div>
+

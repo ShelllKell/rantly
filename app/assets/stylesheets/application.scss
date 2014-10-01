@@ -1,16 +1,54 @@
-#wrapper {
-  display: flex;
-  background: dimgrey;
-  padding: 10rem;
-}
 
-p {
-  color: white;
-  flex: 1 1 auto;
-}
+.homepage {
+  display: flex;
+  flex-direction: column;
+
+  .top-half {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    padding: 4rem;
+
+  }
+
+    .rantly-title {
+      align-content: center;
+      display: flex;
+      background-color: white;
+    }
+
+    .letitout {
+      background-color: white;
+    }
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: gray;
+    justify-content: space-around;
+    padding-top: 5rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+
+
+    .picture {
+      display: flex;
+      flex: 1 1 auto;
+      height: 200px;
+      padding-right: 2rem;
+    }
+
+    .paragraph {
+      display: flex;
+      color: white;
+      flex: 1 1 auto;
+    }
+  }
 
 .gray {
-  background-color: grey;
+  background-color: gray;
 }
 
 .container {
@@ -33,6 +71,7 @@ p {
 
 .middle {
   flex: 1 1 auto;
+  text-align: right;
 }
 
 .right {
@@ -149,6 +188,30 @@ p {
   width: 100%;
 }
 
+.rants {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+
+  .ranter {
+    display: flex;
+
+  }
+
+  .rant-paragraph {
+    display: flex;
+    padding: .5rem;
+    flex-direction: column;
+  }
+
+  .lines {
+    display: flex;
+    justify-content: center;
+
+  }
+}
+
 .button {
   display: flex;
   text-align: center;
@@ -167,6 +230,10 @@ p {
   margin: auto;
 }
 
+.errors {
+  color: red;
+}
+
 .dashboard {
   display: flex;
   flex-direction: row;
@@ -176,12 +243,18 @@ p {
   flex: 1 1 auto;
   background-color: gray;
   text-align: center;
+  width: 10%;
 }
 
 .latest-rants {
   flex: 2 1 auto;
   background-color: white;
   text-align: center;
+
+}
+
+.topic {
+  font-weight: bold;
 }
 
 header {
@@ -200,14 +273,17 @@ main {
   }
 }
 
-h3 {
 
+h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 50px;
   font-family: sans-serif;
 }
 
-h1 {
-  text-align: center;
+
+h3 {
   font-size: 50px;
   font-family: sans-serif;
 }
@@ -218,16 +294,14 @@ h5 {
   font-family: sans-serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  height: 100%;
-  background-color: gray;
+html {
+//  background-color: gray;
 }
 
-img {
-  //  float: left;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .about {
@@ -237,4 +311,9 @@ img {
 
 .user {
   padding: .5rem;
+  font-size: 20px;
+
+  a {
+    color: white;
+  }
 }

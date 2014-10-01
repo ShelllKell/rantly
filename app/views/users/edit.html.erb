@@ -1,0 +1,75 @@
+<div class="dashboard">
+  <div class="rant-input-left">
+
+    <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
+    <br>
+
+    <div class="user">
+      <%= link_to @user.username, edit_user_path(@user) %>
+    </div>
+
+    <%= render 'rants/form' %>
+  </div>
+
+  <div class="latest-rants">
+    <h1><%= @user.first_name + " " + @user.last_name %></h1>
+    <br>
+
+    <div class="register-box">
+      <%= form_for @user do |f| %>
+
+
+        <div class="doubles">
+          <div class="row">
+            <%= f.label :username %>
+            <%= f.label :password %>
+          </div>
+          <div class="row">
+            <%= f.text_field :username, autofocus: true %>
+            <%= f.password_field :password %>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="doubles">
+          <div class="row">
+            <%= f.label :first_name %>
+            <%= f.label :last_name %>
+          </div>
+          <div class="row">
+            <%= f.text_field :first_name %>
+            <%= f.text_field :last_name %>
+          </div>
+        </div>
+
+        <div class="bio">
+          <%= f.label :bio %>
+        </div>
+        <div class="bio-box">
+          <%= f.text_area :bio, :rows => 10 %>
+        </div>
+
+        <div class="time">
+          <%= "How often do you rant?" %>
+        </div>
+        <div class="frequency">
+          <%= f.label :Daily %>
+          <%= f.radio_button :frequency, :daily %>
+
+          <%= f.label :Weekly %>
+          <%= f.radio_button :frequency, :weekly %>
+
+          <%= f.label :Monthly %>
+          <%= f.radio_button :frequency, :monthly %>
+        </div>
+        <div>
+          <%= f.submit "REGISTER", :class => 'button' %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

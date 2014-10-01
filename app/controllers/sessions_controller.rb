@@ -12,7 +12,13 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path
     else
       @user = User.new(username: params[:user][:username])
-      @user.errors[:base] << "Username / password is invalid"
+       if @user[:username] = nil
+        flash[:error] = "Username is required"
+       elsif @user.errors[:password] = nil
+         flash[:error] = "Password is required"
+       # else @user.errors[:base] = nil
+       #   flash[:error] = "Username / password is invalid"
+       end
       render :new
     end
   end
