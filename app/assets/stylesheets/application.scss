@@ -22,31 +22,6 @@
     }
   }
 
-  .intro {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: gray;
-    justify-content: space-around;
-    padding-top: 5rem;
-    padding-left: 15rem;
-    padding-right: 15rem;
-
-
-    .picture {
-      display: flex;
-      flex: 1 1 auto;
-      height: 200px;
-      padding-right: 2rem;
-    }
-
-    .paragraph {
-      display: flex;
-      color: white;
-      flex: 1 1 auto;
-    }
-  }
-
 .gray {
   background-color: gray;
 }
@@ -302,6 +277,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: grey;
 }
 
 .about {
