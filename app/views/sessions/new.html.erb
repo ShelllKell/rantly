@@ -3,9 +3,12 @@
 
     <h3>Login</h3>
 
-    <%= flash[:error] if flash[:error] %>
+    <% if flash[:error] %>
+      <%= flash[:error] %>
+    <% end %>
 
     <%= form_for @user, url: login_path do |f| %>
+
       <div class="username">
         <%= f.label :username %>
       </div>

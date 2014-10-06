@@ -14,8 +14,8 @@ class RantsController < ApplicationController
     @rant = Rant.new(allowed_params)
 
     if @rant.save
-      redirect_to dashboard_path(@user.id)
       flash[:notice] = "Rant was created successfully!"
+      redirect_to dashboard_path(@user.id)
     else
       redirect_to dashboard_path(@user.id)
     end

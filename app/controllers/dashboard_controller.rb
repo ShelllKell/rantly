@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
     @users = User.all
     @user = current_user
     @rant = Rant.new
-    @rants = Rant.order("created_at asc").limit(3)
+    @rants = Rant.includes(:rants).order("created_at ASC").limit(3)
   end
 
 

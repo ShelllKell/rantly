@@ -178,6 +178,7 @@
     display: flex;
     padding: .5rem;
     flex-direction: column;
+    max-width: 700px;
   }
 
   .lines {
@@ -227,10 +228,10 @@
   text-align: center;
 
 }
-
-.topic {
-  font-weight: bold;
-}
+//
+//.topic {
+//  font-weight: bold;
+//}
 
 header {
   background: black;
