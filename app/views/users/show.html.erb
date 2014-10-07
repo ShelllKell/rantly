@@ -4,22 +4,28 @@
   </div>
 
   <div class="latest-rants">
-    <h1><%= @user.first_name + " " + @user.last_name %></h1><%= link_to "Unfollow" %>
-        <br>
-       <h3><%= @user.frequency.capitalize + " " + "Ranter" %></h3>
-         <div class="rant-paragraph">
-      <% @user.rants.each do |rant| %>
-        <div class=topic>
-          <%= rant.topic.capitalize %>
-        </div>
-             <%= rant.rant %>
-             <br>
-             <!--<%= link_to "Delete", user_rant_path(@user, rant), method: :delete %>-->
-      <% end %>
-         </div>
-      </div>
-    <div>
 
+    <h1><%= @user.first_name + " " + @user.last_name %></h1><%= link_to "Unfollow" %>
+    <br>
+
+    <h3><%= @user.frequency.capitalize + " " + "Ranter" %></h3>
+
+    <div class="rants">
+      <div class="ranter">
+
+        <div class="rant-paragraph">
+          <% @user.rants.each do |rant| %>
+
+            <div class="topic">
+              <%= rant.topic.capitalize %>
+            </div>
+            <%= rant.rant %>
+
+          <% end %>
+
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

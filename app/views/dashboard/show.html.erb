@@ -23,8 +23,9 @@
           <div class="rant-paragraph">
 
             <% user.rants.each do |rant| %>
-              <%= link_to user.first_name, user_path(user.id) %> |
+              <%= link_to user.first_name, user_path(user.id) %>
               <%= rant.rant %>
+              <%= link_to "Favorite" %>
             <% end %>
         <% end %>
 
