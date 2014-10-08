@@ -5,10 +5,20 @@
 
   <div class="latest-rants">
 
-    <h1><%= @user.first_name + " " + @user.last_name %></h1><%= link_to "Unfollow" %>
-    <br>
+    <h1><%= @user.first_name + " " + @user.last_name %></h1>
 
+    <div class="float-right"><%= link_to "Unfollow" %></div>
+
+    <div class="line"></div>
+
+    <div class="float-left">
+      <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05_400x400.jpeg" width=150px height=150px/>
+    </div>
     <h3><%= @user.frequency.capitalize + " " + "Ranter" %></h3>
+
+    <%= @user.bio %>
+<br>
+    <br>
 
     <div class="rants">
       <div class="ranter">
@@ -20,10 +30,12 @@
               <%= rant.topic.capitalize %>
             </div>
             <%= rant.rant %>
+            <div class="float-right"><%= link_to "Favorite" %></div>
 
           <% end %>
 
         </div>
+
       </div>
     </div>
   </div>
