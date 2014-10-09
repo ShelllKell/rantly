@@ -163,35 +163,46 @@
   width: 100%;
 }
 
-.rants {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: baseline;
 
+.latest-rants {
+  width: 75%;
+  background-color: white;
 
-  .ranter {
-    display: flex;
-
-  }
-
-  .rant-paragraph {
-    display: flex;
-    padding: .5rem;
-    flex-direction: column;
-    max-width: 700px;
-  }
-
-  .lines {
-    display: flex;
-    justify-content: center;
-
-  }
 }
 
+//.dashboard {
+//  display: flex;
+//  flex-direction: row;
+//}
+
+//
+//.rants {
+//  display: flex;
+//  flex-direction: row;
+//  justify-content: space-around;
+//  align-items: baseline;
+
+//
+//  .ranter {
+//    display: flex;
+//
+//  }
+//
+//  .rant-paragraph {
+//    display: flex;
+//    padding: .5rem;
+//    flex-direction: column;
+//    max-width: 700px;
+//  }
+//
+//  .lines {
+//    display: flex;
+//    justify-content: center;
+//
+//  }
+//}
+
 .button {
-  display: flex;
-  text-align: center;
   font-size: 24pt;
   width: 100%;
   height: 60px;
@@ -211,24 +222,29 @@
   color: red;
 }
 
-.dashboard {
-  display: flex;
-  flex-direction: row;
-}
-
 .rant-input-left {
-  flex: 1 1 auto;
-  background-color: gray;
-  text-align: center;
-  width: 10%;
+  width: 25%;
 }
 
-.latest-rants {
-  flex: 2 1 auto;
-  background-color: white;
+.rant-form {
   text-align: center;
-
+  display: block;
+  width: 100%;
+  input, textarea {
+    width: 90%;
+  }
 }
+
+.user {
+  text-align: center;
+  padding: .5rem;
+  font-size: 20px;
+
+  a {
+    color: white;
+  }
+}
+
 
 .topic {
   font-weight: bold;
@@ -287,11 +303,8 @@ body {
   padding-top: 1rem;
 }
 
-.user {
-  padding: .5rem;
-  font-size: 20px;
 
-  a {
-    color: white;
-  }
+img {
+  display: block;
+  margin: auto;
 }

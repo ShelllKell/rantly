@@ -13,15 +13,17 @@
     </div>
   </div>
 
+
+
     <div class="latest-rants">
 
       <h3>Latest Rants</h3>
 
-      <div class="rants">
-        <div class="ranter">
+      <!--<div class="rants">-->
+        <!--<div class="ranter">-->
 
           <% @users.each do |user| %>
-            <div class="rant-paragraph">
+            <!--<div class="rant-paragraph">-->
 
               <% user.rants.each do |rant| %>
                 <%= link_to user.first_name, user_path(user.id) %>
@@ -31,33 +33,33 @@
               <% end %>
           <% end %>
 
-          </div>
-        </div>
-      </div>
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
-    </div>
+
 
 
     <h3>My Rants</h3>
     <ul>
-      <div class="rants">
-        <div class="ranter">
+      <!--<div class="rants">-->
+        <!--<div class="ranter">-->
           <%= @user.first_name %>
           <br>
           <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
 
-        </div>
-        <div class="rant-paragraph">
+        <!--</div>-->
+        <!--<div class="rant-paragraph">-->
 
           <% @user.rants.each do |rant| %>
             <%= rant.rant %><%= link_to "Delete", user_rant_path(@user, rant), method: :delete %>
           <% end %>
 
-        </div>
-      </div>
+        <!--</div>-->
+      <!--</div>-->
     </ul>
   </div>
 
-
+</div>
 
   </div>

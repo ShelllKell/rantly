@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :check_logged_in_user
+
 
   def index
     @users = User.all
@@ -43,10 +43,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :frequency)
   end
 
-  def check_logged_in_user
-    if signed_in?
-      redirect_to dashboard_path
-    end
-  end
 
 end
