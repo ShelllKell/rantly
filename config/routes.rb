@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
   resource :dashboard, controller: :dashboard
 
+  resources :followers
+
 end

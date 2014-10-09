@@ -5,6 +5,9 @@
     <div class="user">
       <%= link_to @user.username, edit_user_path(@user) %>
     </div>
+    <% if alert %>
+      <%= alert %>
+    <% end  %>
     <div>
       <%= render 'rants/form' %>
     </div>
@@ -22,7 +25,8 @@
 
               <% user.rants.each do |rant| %>
                 <%= link_to user.first_name, user_path(user.id) %>
-                <%= rant.rant %>
+                <%= link_to "Follow", followers_path %>
+                <%= rant.rant %>...<%= time_ago_in_words(rant.created_at) %>
                 <%= link_to "Favorite" %>
               <% end %>
           <% end %>
