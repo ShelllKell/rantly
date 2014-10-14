@@ -2,12 +2,13 @@
   <div class="rant-input-left">
     <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
     <br>
+
     <div class="user">
       <%= link_to @user.username, edit_user_path(@user) %>
     </div>
     <% if alert %>
       <%= alert %>
-    <% end  %>
+    <% end %>
     <div>
       <%= render 'rants/form' %>
     </div>
@@ -15,51 +16,57 @@
 
 
 
-    <div class="latest-rants">
+  <div class="latest-rants">
+    <h3>Latest Rants</h3>
 
-      <h3>Latest Rants</h3>
+    <% @users.each do |user| %>
 
-      <!--<div class="rants">-->
-        <!--<div class="ranter">-->
+      <div class="rant-paragraph">
+        <% user.rants.each do |rant| %>
+          <br>
 
-          <% @users.each do |user| %>
-            <!--<div class="rant-paragraph">-->
+          <div class="topic">
+            <p> <%= link_to user.first_name, user_path(user.id) %></p>
 
-              <% user.rants.each do |rant| %>
-                <%= link_to user.first_name, user_path(user.id) %>
-                <%= link_to "Follow", followers_path %>
-                <%= rant.rant %>...<%= time_ago_in_words(rant.created_at) %>
-                <%= link_to "Favorite" %>
-              <% end %>
-          <% end %>
+            <div class="other-img">
+              <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
+              <%= link_to "Follow", followers_path %>
+            </div>
+          </div>
+          <br>
 
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
+          <p><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></p>
+          <div class="favorite"><%= link_to "Favorite" %></div>
+        <% end %>
+    <% end %>
 
-
+    </div>
 
 
     <h3>My Rants</h3>
     <ul>
-      <!--<div class="rants">-->
-        <!--<div class="ranter">-->
+      <div class="rants">
+        <div class="ranter">
           <%= @user.first_name %>
           <br>
           <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
 
-        <!--</div>-->
-        <!--<div class="rant-paragraph">-->
+        </div>
+        <div class="rant-paragraph">
 
           <% @user.rants.each do |rant| %>
-            <%= rant.rant %><%= link_to "Delete", user_rant_path(@user, rant), method: :delete %>
+            <p> <%= rant.rant %> </p>
+            <br>
+            <%= link_to "Delete", user_rant_path(@user, rant), method: :delete %>
+            <br>
           <% end %>
 
-        <!--</div>-->
-      <!--</div>-->
+        </div>
+      </div>
     </ul>
-  </div>
 
 </div>
-
   </div>
+
+
+

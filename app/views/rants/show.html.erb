@@ -1,0 +1,38 @@
+<div class="dashboard">
+  <div class="rant-input-left">
+    <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
+    <br>
+
+    <div class="user">
+      <%= link_to @user.username, edit_user_path(@user) %>
+    </div>
+    <% if alert %>
+      <%= alert %>
+    <% end %>
+    <div>
+      <%= render 'rants/form' %>
+    </div>
+  </div>
+
+
+  <div class="latest-rants">
+    <div class="favorite"><%= link_to "Favorite" %></div>
+    <br>
+
+    <h1><%= @rant.topic %></h1>
+
+    <div class="other-img">
+      <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
+    </div>
+    <h4>by <%= link_to @user.first_name.capitalize, user_path(@user.id) %></h4>
+
+    <div class="favorite"><%= link_to "Spam" %>
+      <%= link_to "Tweet" %></div>
+    <br>
+    <br>
+
+    <p><%= @rant.rant %></p>
+
+
+  </div>
+</div>
