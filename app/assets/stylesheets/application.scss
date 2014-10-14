@@ -197,12 +197,6 @@
   .rant-paragraph {
     max-width: 700px;
   }
-
-//  .lines {
-//    display: flex;
-//    justify-content: center;
-//
-//  }
 }
 
 .button {
@@ -276,7 +270,7 @@ h1 {
   margin-right: auto;
   font-size: 50px;
   font-family: sans-serif;
-  border-bottom: solid black;
+//  border-bottom: solid black;
 }
 
 
@@ -285,17 +279,15 @@ h3 {
   font-size: 50px;
   font-family: sans-serif;
   border-bottom: solid black;
-
 }
 
 h4 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 24pt;
-  display: inline;
+  display: block;
   float: left;
   font-family: sans-serif;
-
 
   a {
     text-decoration: none;
@@ -352,4 +344,8 @@ p {
 .favorite {
   float: right;
   padding-right: 4rem;
+}
+
+.font {
+  font-family: sans-serif;
 }
