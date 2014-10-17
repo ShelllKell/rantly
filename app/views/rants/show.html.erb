@@ -26,8 +26,17 @@
     </div>
     <h4>by <%= link_to @user.first_name.capitalize, user_path(@user.id) %></h4>
 
-    <div class="favorite"><%= link_to "Spam" %>
-      <%= link_to "Tweet" %></div>
+    <div class="favorite">
+      <div class="spam">
+        <%= link_to "Spam" %>
+      </div>
+      <div class="tweet">
+        <%= link_to "Tweet" %>
+      </div>
+    </div>
+
+    <br>
+    <br>
     <br>
     <br>
 

@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
     @users = User.all
     @user = current_user
     @rant = Rant.new
-    @rants = Rant.includes(:rants)
+    # @rants = Rant.includes(:rants)
   end
 
 

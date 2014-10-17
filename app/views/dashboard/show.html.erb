@@ -14,12 +14,10 @@
     </div>
   </div>
 
-
-
   <div class="latest-rants">
     <h3>Latest Rants</h3>
 
-    <% @users.each do |user| %>
+    <% other_users.each do |user| %>
 
       <div class="rant-paragraph">
         <% user.rants.each do |rant| %>
@@ -30,18 +28,21 @@
 
             <div class="other-img">
               <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
-              <%= link_to "Follow", followers_path %>
+              <% unless followed(user) %>
+              <%= link_to "Follow", user_follows_path(user), method: :post %>
+                <% else %>
+              <%= link_to "Unfollow", user_follow_path(user.id, @follow), method: :delete %>
+                <% end  %>
             </div>
           </div>
           <br>
 
           <p><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></p>
+
           <div class="favorite"><%= link_to "Favorite" %></div>
         <% end %>
     <% end %>
-
     </div>
-
 
     <h3>My Rants</h3>
     <ul>
@@ -65,8 +66,8 @@
       </div>
     </ul>
 
-</div>
   </div>
+</div>
 
 
 
