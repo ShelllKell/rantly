@@ -15,9 +15,7 @@ class SessionsController < ApplicationController
       flash[:error] = "Username/Password is invalid"
       render :new
     end
-
   end
-
 
   def destroy
     reset_session

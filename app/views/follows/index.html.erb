@@ -2,7 +2,6 @@
   <div class="rant-input-left">
     <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
     <br>
-
     <div class="user">
       <%= link_to current_user.username, edit_user_path(current_user) %>
     </div>
@@ -21,8 +20,6 @@
       <%= f.user.username %>
         <%= link_to "Unfollow", user_follow_path(current_user.id, @follows), method: :delete %>
       <% end  %>
-
-
 
   </div>
 </div>

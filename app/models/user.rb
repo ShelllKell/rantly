@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   validates :password, presence: {message: "Password Required."}
   # validates :bio, length: {maximum: 700}
 
+  def following?(user)
+
+  end
+
 end
