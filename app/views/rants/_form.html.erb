@@ -1,21 +1,28 @@
 <div class="rant-form">
-<%= form_for [@user, @rant] do |f| %>
-  <div class="about">
-    <%= f.label :topic, "A rant about:" %>
-    <br>
-    <%= f.text_field :topic, autofocus: true %>
-  </div>
-  <br>
+  <%= form_for [@user, @rant] do |f| %>
 
-  <div>
-    <%= f.label :rant, "Rant:" %>
-    <br>
-    <%= f.text_area :rant, :rows => 20, autofocus: true, placeholder: "Rant about something or at someone..." %>
-  </div>
-  <br>
+    <% if @rant.errors.any? %>
+      <% @rant.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
 
-  <div>
-    <%= f.submit "RANT", class: 'button' %>
-  </div>
-<% end %>
+    <div class="about">
+      <%= f.label :topic, "A rant about:" %>
+      <br>
+      <%= f.text_field :topic, autofocus: true %>
+    </div>
+    <br>
+
+    <div>
+      <%= f.label :rant, "Rant:" %>
+      <br>
+      <%= f.text_area :rant, :rows => 20, autofocus: true, placeholder: "Rant about something or at someone..." %>
+    </div>
+    <br>
+
+    <div>
+      <%= f.submit "RANT", class: 'button' %>
+    </div>
+  <% end %>
 </div>

@@ -21,8 +21,7 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to dashboard_path(@user.id)
     else
-      flash.alert = "Could not rant."
-      redirect_to dashboard_path(@user.id)
+      render 'dashboard/show'
     end
   end
 
