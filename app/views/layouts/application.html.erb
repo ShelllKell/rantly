@@ -17,7 +17,7 @@
     <% if session[:user_id] %>
       <div class="middle">
         <%= link_to "Dashboard", dashboard_path %> | <%= link_to "Following", user_follows_path(current_user.id) %>
-        | <%= link_to "Favorites", dashboard_path %> | <%= link_to "Search", root_path %>
+        | <%= link_to "Favorites", user_favorites_path(current_user.id) %> | <%= link_to "Search", search_index_path %>
       </div>
       <div class="right">
         <div class="join">

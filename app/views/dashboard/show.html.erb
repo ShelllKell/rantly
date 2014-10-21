@@ -41,9 +41,9 @@
 
           <div class="favorite">
             <% unless favorited(rant) %>
-              <%= link_to "Favorite", user_rant_favorites_path(@user.id, rant.id), method: :post %>
+              <%= link_to "Favorite", favorite_path(rant.user, rant) %>
             <% else %>
-              <%= link_to "Unfavorite", user_rant_favorite_path(@user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
+              <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
             <% end  %>
 
 
