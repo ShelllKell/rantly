@@ -4,7 +4,14 @@
   </div>
 
   <div class="latest-rants">
-    <div class="favorite"><%= link_to "Unfollow" %></div>
+    <div class="favorite">
+      <% unless followed(@user) %>
+        <%= link_to "Follow", user_follows_path(@user), method: :post %>
+      <% else %>
+        <%= link_to "Unfollow", user_follow_path(@user.id, @follow), method: :delete %>
+      <% end  %>
+
+    </div>
     <h3><%= @user.first_name + " " + @user.last_name %></h3>
 
     <div class="rants">

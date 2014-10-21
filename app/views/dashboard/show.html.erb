@@ -31,15 +31,23 @@
               <% unless followed(user) %>
               <%= link_to "Follow", user_follows_path(user), method: :post %>
                 <% else %>
-              <%= link_to "Unfollow", user_follow_path(user.id, @follow), method: :delete %>
+              <%= link_to "Unfollow", user_follow_path(user, @follow), method: :delete %>
                 <% end  %>
             </div>
           </div>
           <br>
 
-          <p><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></p>
+          <p><%= link_to rant.rant, user_rant_path(rant.user_id, rant) %></p>
 
-          <div class="favorite"><%= link_to "Favorite" %></div>
+          <div class="favorite">
+            <% unless favorited(rant) %>
+              <%= link_to "Favorite", user_rant_favorites_path(@user.id, rant.id), method: :post %>
+            <% else %>
+              <%= link_to "Unfavorite", user_rant_favorite_path(@user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
+            <% end  %>
+
+
+          </div>
         <% end %>
     <% end %>
     </div>
