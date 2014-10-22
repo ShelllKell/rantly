@@ -45,7 +45,7 @@
             <% else %>
               <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
             <% end  %>
-
+                    <%= rant.favorite_count  %>
 
           </div>
         <% end %>

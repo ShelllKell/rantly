@@ -9,6 +9,6 @@ class Rant < ActiveRecord::Base
 
 
   def favorite_count
-
+    favorites.length
   end
 end

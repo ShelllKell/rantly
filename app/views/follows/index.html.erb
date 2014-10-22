@@ -17,7 +17,7 @@
     <h1>Following</h1>
 
     <% @follows.each do |follow| %>
-      <%= follow.user.username %>
+      <ul><%= follow.user.username %></ul>
       <%= link_to "Unfollow", user_follow_path(current_user, follow), method: :delete %>
     <% end  %>
 

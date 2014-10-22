@@ -16,8 +16,6 @@
 
 
   <div class="latest-rants">
-    <div class="favorite"><%= link_to "Favorite" %></div>
-    <br>
 
     <h1><%= @rant.topic %></h1>
 
@@ -47,6 +45,6 @@
       <%= link_to "Unfavorite", unfavorite_path(@rant.user, @rant) %>
     <% end  %>
 
-
+    <%= @rant.favorite_count %>
   </div>
 </div>
