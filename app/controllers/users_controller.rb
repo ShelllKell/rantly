@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @users = User.all
   end
@@ -8,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @rant = Rant.new
+    @rants = Rant.where(:user_id => @user.id).order(favorite_count: :desc)
   end
 
   def new
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def allowed_parameters
-    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :frequency)
+    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :frequency, :avatar)
   end
 
 

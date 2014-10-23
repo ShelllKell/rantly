@@ -9,10 +9,8 @@ class DashboardController < ApplicationController
   end
 
   def show
-    @users = User.all
-    @user = current_user
+    @rants = Rant.where.not(user_id: current_user.id).reverse
     @rant = Rant.new
-    # @rants = Rant.includes(:rants)
   end
 
 

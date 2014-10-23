@@ -9,7 +9,7 @@
         <%= link_to "Follow", user_follows_path(@user), method: :post %>
       <% else %>
         <%= link_to "Unfollow", user_follow_path(@user.id, @follow), method: :delete %>
-      <% end  %>
+      <% end %>
 
     </div>
     <h3><%= @user.first_name + " " + @user.last_name %></h3>
@@ -27,12 +27,20 @@
       <br>
       <br>
 
-      <% @user.rants.each do |rant| %>
+      <% order_favorites(@user.rants).each do |rant| %>
         <div class="topic">
           <%= rant.topic.capitalize %>
         </div>
         <%= rant.rant %>
-        <div class="favorite"><%= link_to "Favorite" %></div>
+
+        <div class="favorite">
+          <% unless favorited(rant) %>
+            <%= link_to "Favorite", favorite_path(rant.user, rant) %>
+          <% else %>
+            <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
+          <% end %>
+
+          <%= rant.favorite_count %></div>
       <% end %>
     </div>
   </div>

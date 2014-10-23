@@ -5,10 +5,13 @@ class Rant < ActiveRecord::Base
   validates :topic, presence: {:message => "must be less than 50 characters."}
   validates :rant, presence: {:message => "must be more than 140 characters."}
 
-  default_scope { order("created_at DESC") }
+  # default_scope { order("created_at DESC") }
 
 
   def favorite_count
     favorites.length
   end
+
+
+
 end

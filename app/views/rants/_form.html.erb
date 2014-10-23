@@ -1,5 +1,5 @@
 <div class="rant-form">
-  <%= form_for [@user, @rant] do |f| %>
+  <%= form_for [current_user, @rant] do |f| %>
 
     <% if @rant.errors.any? %>
       <% @rant.errors.full_messages.each do |message| %>

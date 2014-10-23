@@ -7,7 +7,7 @@ module ApplicationHelper
 
   def favorited(rant)
     @favorite = Favorite.find_by(user_id: current_user.id, rant_id: rant.id)
-    # @favorite == nil ? false : true
+
   end
 
 end
