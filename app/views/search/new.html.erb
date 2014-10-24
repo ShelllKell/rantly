@@ -14,12 +14,13 @@
     </div>
   </div>
 
+
   <div class="latest-rants">
     <h3>Search</h3>
 
     <%= form_tag("/search", method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: "search something" %>
-     <%= submit_tag "Search" %>
+     <%= submit_tag "Search"  %>
     <% end %>
 
 

@@ -35,6 +35,7 @@ class UsersController < ApplicationController
     redirect_to dashboard_path(@user)
   end
 
+
   private
 
   def allowed_parameters

@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   resource :dashboard, controller: :dashboard
   resources :search
+  resources :hashtags, only: [:show]
 end
