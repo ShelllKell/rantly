@@ -1,6 +1,6 @@
 <div class="dashboard">
   <div class="rant-input-left">
-    <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
+    <img src="https://avatars2.githubusercontent.com/u/161737?v=2&s=460" height="100px" width="100px"/>
     <br>
 
     <div class="user">
@@ -17,64 +17,58 @@
   <div class="latest-rants">
     <h3>Latest Rants</h3>
 
+    <div class="rant-paragraph">
+      <% @rants.each do |rant| %>
+        <br>
 
+        <div class="topic">
+          <p> <%= link_to rant.user.first_name, user_path(rant.user.id) %></p>
 
-      <div class="rant-paragraph">
-        <% @rants.each do |rant| %>
-          <br>
-
-          <div class="topic">
-            <p> <%= link_to rant.user.first_name, user_path(rant.user.id) %></p>
-
-            <div class="other-img">
-              <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
-              <% unless followed(rant.user) %>
-              <%= link_to "Follow", user_follows_path(rant.user), method: :post %>
-                <% else %>
-              <%= link_to "Unfollow", user_follow_path(rant.user, @follow), method: :delete %>
-                <% end  %>
-            </div>
-          </div>
-          <br>
-
-          <p><%= link_to rant.rant, user_rant_path(rant.user_id, rant) %></p>
-
-          <div class="favorite">
-            <% unless favorited(rant) %>
-              <%= link_to "Favorite", favorite_path(rant.user, rant) %>
+          <div class="other-img">
+            <img src="https://avatars2.githubusercontent.com/u/161737?v=2&s=460" height="100px" width="100px"/>
+            <% unless followed(rant.user) %>
+              <div class="follow"><%= link_to "Follow", user_follows_path(rant.user), method: :post %></div>
             <% else %>
-              <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
-            <% end  %>
-                    <%= rant.favorite_count  %>
-
+              <div class="unfollow"><%= link_to "Unfollow", user_follow_path(rant.user, @follow), method: :delete %></div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
+        <br>
+
+        <p> <%= link_to rant.rant, user_rant_path(rant.user_id, rant) %></p>
+        <br>
+
+        <div class="favorite">
+          <% unless favorited(rant) %>
+            <%= link_to "Favorite", favorite_path(rant.user, rant) %>
+          <% else %>
+            <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
+          <% end %>
+          <%= rant.favorite_count %>
+        </div>
+      <% end %>
 
     </div>
 
     <h3>My Rants</h3>
-    <ul>
-      <div class="rants">
-        <div class="ranter">
-          <%= current_user.first_name %>
-          <br>
-          <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
 
-        </div>
-        <div class="rant-paragraph">
-
-          <% current_user.rants.each do |rant| %>
-            <p> <%= rant.rant %> </p>
-            <br>
-            <%= link_to "Delete", user_rant_path(current_user, rant), method: :delete %>
-            <br>
-          <% end %>
-
-        </div>
+    <div class="ranter">
+      <div class="topic">
+        <p><%= link_to current_user.first_name, user_path(current_user) %></p>
       </div>
-    </ul>
-
+      <br>
+    </div>
+    <div class="rant-paragraph">
+      <% current_user.rants.each do |rant| %>
+        <ul>
+          <p> <%= rant.rant %> </p>
+        </ul>
+        <div class="favorite"><%= link_to "Delete", user_rant_path(current_user, rant), method: :delete %></div>
+        <br>
+      <% end %>
+    </div>
   </div>
+
 </div>
 
 

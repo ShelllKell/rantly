@@ -4,7 +4,7 @@ class FollowsController < ApplicationController
     @users = User.all
     @follows = Follow.where(follower_id: current_user.id)
     @rant = Rant.new
-    @user = User.find(params[:user_id])
+    @user = User.all
   end
 
   def show

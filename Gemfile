@@ -14,6 +14,9 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+
 end
 
 gem 'paperclip', '~> 4.2.0'
@@ -22,3 +25,4 @@ gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor', group: [:production, :stage]
 
+gem 'elasticsearch-rails', '~> 0.1.6'

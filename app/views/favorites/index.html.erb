@@ -18,9 +18,12 @@
     <h1>Favorites</h1>
 
     <% @favorites.each do |favorite| %>
-      <ul><%= favorite.rant.rant %></ul>
-      <%= link_to "Unfavorite", unfavorite_path(favorite.user, favorite.rant) %>
-      <%= favorite.favorite_count %>
+      <p><%= favorite.rant.rant %></p>
+
+      <div class="favorite">
+        <%= link_to "Unfavorite", unfavorite_path(favorite.user, favorite.rant) %>
+        <%= favorite.favorite_count %>
+      </div>
     <% end %>
   </div>
 </div>

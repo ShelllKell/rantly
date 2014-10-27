@@ -2,6 +2,7 @@
   <div class="rant-input-left">
     <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05.jpeg" width=100px height=100px/>
     <br>
+
     <div class="user">
       <%= link_to current_user.username, edit_user_path(current_user) %>
     </div>
@@ -16,10 +17,14 @@
   <div class="latest-rants">
     <h1>Following</h1>
 
-    <% @follows.each do |follow| %>
-      <ul><%= follow.user.username %></ul>
-      <%= link_to "Unfollow", user_follow_path(current_user, follow), method: :delete %>
-    <% end  %>
+    <div class="topic">
 
+      <% @follows.each do |follow| %>
+        <p><%= link_to follow.user.username, user_path(follow.followee_id) %></p>
+
+        <div class="unfollow"><%= link_to "Unfollow", user_follow_path(current_user, follow), method: :delete %></div>
+      <% end %>
+
+    </div>
   </div>
 </div>

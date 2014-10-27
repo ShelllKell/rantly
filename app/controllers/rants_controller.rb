@@ -15,13 +15,12 @@ class RantsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @rant = Rant.new(allowed_params)
 
     if @rant.save
-      redirect_to dashboard_path(@user.id)
+      redirect_to dashboard_path(params[:user_id])
     else
-      render 'dashboard/show'
+      redirect_to dashboard_path
     end
   end
 
@@ -32,12 +31,10 @@ class RantsController < ApplicationController
   end
 
 
-
-
   private
 
   def allowed_params
-    params.require(:rant).permit(:topic, :rant).merge({user_id: @user.id})
+    params.require(:rant).permit(:topic, :rant).merge({user_id: params[:user_id]})
   end
 
 

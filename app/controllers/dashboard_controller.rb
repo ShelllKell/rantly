@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+  before_action :make_sure_user_exists
+
 
   def index
     @users = User.all
@@ -12,7 +14,6 @@ class DashboardController < ApplicationController
     @rants = Rant.where.not(user_id: current_user.id).reverse
     @rant = Rant.new
   end
-
 
 
 end

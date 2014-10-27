@@ -5,12 +5,15 @@
 
   <div class="latest-rants">
     <div class="favorite">
-      <% unless followed(@user) %>
-        <%= link_to "Follow", user_follows_path(@user), method: :post %>
-      <% else %>
-        <%= link_to "Unfollow", user_follow_path(@user.id, @follow), method: :delete %>
-      <% end %>
-
+      <div class="topic">
+        <% if current_user != @user %>
+          <% unless followed(@user) %>
+            <div class="follow"><%= link_to "Follow", user_follows_path(@user), method: :post %></div>
+          <% else %>
+            <div class="unfollow"><%= link_to "Unfollow", user_follow_path(@user.id, @follow), method: :delete %></div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <h3><%= @user.first_name + " " + @user.last_name %></h3>
 

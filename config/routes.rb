@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "/user/:user_id/rant/:rant_id/unfavorite" => "favorites#destroy", as: :unfavorite
 
 
+  resource :search, only: [:new, :show]
+
   resources :users do
     resources :favorites, only: [:index]
     resources :follows
@@ -16,6 +18,5 @@ Rails.application.routes.draw do
   end
 
   resource :dashboard, controller: :dashboard
-  resources :search
   resources :hashtags, only: [:show]
 end

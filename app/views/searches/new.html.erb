@@ -16,13 +16,16 @@
 
 
   <div class="latest-rants">
-    <h3>Search</h3>
+    <h1>Search</h1>
 
-    <%= form_tag("/search", method: "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "search something" %>
-     <%= submit_tag "Search"  %>
+    <%= form_for(:search, url: search_path, method: :get) do |form| %>
+      <div class="search-box">
+        <%= form.text_field :term, placeholder: "Search here" %>
+      </div>
+      <div class="join">
+        <%= form.submit "Search", class: 'button' %>
+      </div>
     <% end %>
-
-
   </div>
+
 </div>

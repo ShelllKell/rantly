@@ -7,7 +7,6 @@
     display: flex;
     background-color: white;
     flex-direction: column;
-//    padding: 4rem;
     padding-bottom: 0;
 
   }
@@ -166,7 +165,6 @@
 
 .text-field {
   padding-bottom: .5rem;
-  width: 100%;
 }
 
 
@@ -174,8 +172,6 @@
   width: 75%;
   background-color: white;
   padding: 10px;
-
-
 }
 
 .dashboard {
@@ -190,12 +186,6 @@
   justify-content: space-around;
   align-items: baseline;
 
-
-//  .ranter {
-//    display: flex;
-//
-//  }
-
   .rant-paragraph {
     max-width: 700px;
   }
@@ -207,6 +197,7 @@
   height: 60px;
   background-color: green;
   border: solid black;
+  color: white;
 
 }
 
@@ -276,7 +267,10 @@
 
 
 .topic {
+  text-align: left;
   font-weight: bold;
+  font-family: sans-serif;
+  font-size: 17pt;
 }
 
 header {
@@ -362,10 +356,11 @@ img {
 
 p {
   width: 70%;
-  margin-left: auto;
+  margin-left: 3.9rem;
   margin-right: auto;
   font-family: sans-serif;
   text-decoration: none;
+
 
   a {
     text-decoration: none;
@@ -374,6 +369,7 @@ p {
 }
 
 .favorite {
+  font-family: sans-serif;
   float: right;
   padding-right: 4rem;
 }
@@ -388,5 +384,28 @@ p {
   text-align: center;
   height: 3rem;
   width: 100%;
+
+}
+
+.follow {
+  margin-top: 1rem;
+  a {
+    margin-left: .5rem;
+    text-decoration: none;
+    color: green;
+  }
+}
+
+.unfollow {
+  margin-top: 1rem;
+  a {
+    margin-left: .5rem;
+    text-decoration: none;
+    color: red;
+  }
+}
+
+.search-box {
+  padding-bottom: .5rem;
 
 }
