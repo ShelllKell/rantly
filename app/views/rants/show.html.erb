@@ -36,7 +36,7 @@
     <br>
     <br>
 
-    <p><%= @rant.rant %></p>
+    <p><%= truncate(@rant.rant, :length => 300) %></p>
     <% unless favorited(@rant) %>
       <%= link_to "Favorite", favorite_path(@rant.user, @rant) %>
     <% else %>

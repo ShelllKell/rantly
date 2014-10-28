@@ -33,7 +33,7 @@
         <div class="topic">
           <%= rant.topic.capitalize %>
         </div>
-        <%= rant.rant %>
+        <%= truncate(rant.rant, :length => 300) %>
 
         <div class="favorite">
           <% unless favorited(rant) %>

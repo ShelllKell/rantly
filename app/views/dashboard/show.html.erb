@@ -35,7 +35,7 @@
         </div>
         <br>
 
-        <p> <%= link_to rant.rant, user_rant_path(rant.user_id, rant) %></p>
+        <p> <%= link_to truncate(rant.rant, :length => 300), user_rant_path(rant.user_id, rant) %></p>
         <br>
 
         <div class="favorite">
@@ -61,7 +61,7 @@
     <div class="rant-paragraph">
       <% current_user.rants.each do |rant| %>
         <ul>
-          <p> <%= rant.rant %> </p>
+          <p> <%= truncate(rant.rant, :length => 300) %> </p>
         </ul>
         <div class="favorite"><%= link_to "Delete", user_rant_path(current_user, rant), method: :delete %></div>
         <br>
