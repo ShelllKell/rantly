@@ -4,9 +4,8 @@ module UsersHelper
     [user.first_name, user.last_name].join(" ")
   end
 
-
-  def order_favorites(rants)
-    rants.sort_by { |rant| rant.favorite_count }.reverse
+  def user_comments(user)
+    user.comments.where(commentable_type: "User")
   end
 
 end

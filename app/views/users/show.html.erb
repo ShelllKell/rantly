@@ -23,7 +23,6 @@
       </div>
       <h1><%= @user.frequency.capitalize + " " + "Ranter" %></h1>
       <br>
-      <br>
     </div>
     <div class="font">
       <div class="topic">Bio:</div> <%= @user.bio %>
@@ -46,6 +45,20 @@
           <%= rant.favorite_count %></div>
       <% end %>
     </div>
+    <br>
+    <% if user_comments(@user) %>
+      <% user_comments(@user).each do |comment| %>
+        <%= comment.user.username + ":" %>
+        <ul><%= comment.comment %></ul>
+      <% end %>
+    <% end %>
+    <br>
+    <br>
+    <%= form_for(:comment, url: user_profile_comments_path(@user), method: :post) do |comment| %>
+      <%= comment.text_field :comment, placeholder: "Your comment here..." %>
+      <p>
+        <%= comment.submit "RANT BACK", class: 'button' %>
+    <% end %>
   </div>
 </div>
 

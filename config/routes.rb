@@ -7,16 +7,17 @@ Rails.application.routes.draw do
   get "/user/:user_id/rant/:rant_id/favorite" => "favorites#create", as: :favorite
   get "/user/:user_id/rant/:rant_id/unfavorite" => "favorites#destroy", as: :unfavorite
 
-
-  resource :search, only: [:new, :show]
-
   resources :users do
+    post "profile_comments" => "comments#create"
     resources :favorites, only: [:index]
     resources :follows
     resources :rants do
+      post "rant_comments" => "comments#create"
     end
   end
 
   resource :dashboard, controller: :dashboard
   resources :hashtags, only: [:show]
+  resource :search, only: [:new, :show]
+
 end

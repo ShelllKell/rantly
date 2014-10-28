@@ -2,11 +2,10 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :rants
+  has_many :comments, as: :commentable
   has_many :follows, foreign_key: :follower_id
   has_many :follows, foreign_key: :followee_id
   has_attached_file :image
-
-
 
   validates :username, presence: {error: "Username required, must be unique."}
   validates :password, length: {minimum: 8}

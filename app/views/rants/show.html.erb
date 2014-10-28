@@ -14,7 +14,6 @@
     </div>
   </div>
 
-
   <div class="latest-rants">
 
     <h1><%= @rant.topic %></h1>
@@ -32,7 +31,6 @@
         <%= link_to "Tweet" %>
       </div>
     </div>
-
     <br>
     <br>
     <br>
@@ -43,8 +41,28 @@
       <%= link_to "Favorite", favorite_path(@rant.user, @rant) %>
     <% else %>
       <%= link_to "Unfavorite", unfavorite_path(@rant.user, @rant) %>
-    <% end  %>
+    <% end %>
 
     <%= @rant.favorite_count %>
+    <br>
+
+    <% if rant_comments(@rant) %>
+      <%= current_user.username + ":" %>
+      <% rant_comments(@rant).each do |comment| %>
+        <%= comment.comment %>
+      <% end %>
+    <% end %>
+    <br>
+    <br>
+    <%= form_for(@comment, url: "/users/#{current_user.id}/rants/#{@rant.id}/rant_comments", method: :post) do |comment| %>
+      <%= comment.text_field :comment, placeholder: "Your comment here..." %>
+      <p>
+        <%= comment.submit "RANT BACK", class: 'button' %>
+    <% end %>
   </div>
 </div>
+</div>
+
+
+
+
