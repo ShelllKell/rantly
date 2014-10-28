@@ -18,9 +18,9 @@
     <h3>Latest Rants</h3>
 
     <div class="rant-paragraph">
+
       <% @rants.each do |rant| %>
         <br>
-
         <div class="topic">
           <p> <%= link_to rant.user.first_name, user_path(rant.user.id) %></p>
 

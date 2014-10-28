@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :rants
+  has_many :rants, dependent: :destroy
   has_many :comments, as: :commentable
   has_many :follows, foreign_key: :follower_id
   has_many :follows, foreign_key: :followee_id
