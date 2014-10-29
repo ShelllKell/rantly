@@ -1,6 +1,6 @@
 <div class="dashboard">
   <div class="rant-input-left">
-    <img src="https://avatars2.githubusercontent.com/u/161737?v=2&s=460" height="100px" width="100px"/>
+    <%= image_tag current_user.image.url(:thumb) %>
     <br>
 
     <div class="user">
@@ -25,7 +25,7 @@
           <p> <%= link_to rant.user.first_name, user_path(rant.user.id) %></p>
 
           <div class="other-img">
-            <img src="https://avatars2.githubusercontent.com/u/161737?v=2&s=460" height="100px" width="100px"/>
+            <%= image_tag rant.user.image.url(:thumb) %>
             <% unless followed(rant.user) %>
               <div class="follow"><%= link_to "Follow", user_follows_path(rant.user), method: :post %></div>
             <% else %>

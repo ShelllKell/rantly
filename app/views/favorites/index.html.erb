@@ -18,7 +18,7 @@
     <h1>Favorites</h1>
 
     <% @favorites.each do |favorite| %>
-      <p><%= favorite.rant.rant %></p>
+      <p><%= truncate(favorite.rant.rant, :length => 300) %></p>
 
       <div class="favorite">
         <%= link_to "Unfavorite", unfavorite_path(favorite.user, favorite.rant) %>

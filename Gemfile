@@ -16,7 +16,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-byebug'
   gem 'pry-rails'
-
+  gem 'foreman'
 end
 
 gem 'paperclip', '~> 4.2.0'
@@ -24,5 +24,7 @@ gem 'paperclip', '~> 4.2.0'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor', group: [:production, :stage]
+gem 'thin'
 
 gem 'elasticsearch-rails', '~> 0.1.6'
+gem 'aws-sdk'

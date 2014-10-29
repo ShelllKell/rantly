@@ -37,13 +37,15 @@
     <br>
 
     <p><%= truncate(@rant.rant, :length => 300) %></p>
-    <% unless favorited(@rant) %>
-      <%= link_to "Favorite", favorite_path(@rant.user, @rant) %>
-    <% else %>
-      <%= link_to "Unfavorite", unfavorite_path(@rant.user, @rant) %>
-    <% end %>
 
-    <%= @rant.favorite_count %>
+    <div class="favorite">
+      <% unless favorited(@rant) %>
+        <%= link_to "Favorite", favorite_path(@rant.user, @rant) %>
+      <% else %>
+        <%= link_to "Unfavorite", unfavorite_path(@rant.user, @rant) %>
+      <% end %>
+      <%= @rant.favorite_count %>
+    </div>
     <br>
 
     <% if rant_comments(@rant) %>
