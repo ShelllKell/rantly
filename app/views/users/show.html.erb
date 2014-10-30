@@ -19,7 +19,7 @@
 
     <div class="rants">
       <div class="other-img">
-        <img src="https://pbs.twimg.com/profile_images/3640983126/2eab5ffd09240704352ac1b689e08d05_400x400.jpeg" width=150px height=150px/>
+        <%= image_tag current_user.image.url(:thumb) %>
       </div>
       <h1><%= @user.frequency.capitalize + " " + "Ranter" %></h1>
       <br>
