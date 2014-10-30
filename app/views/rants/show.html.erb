@@ -16,7 +16,7 @@
 
   <div class="latest-rants">
 
-    <h1><%= @rant.topic %></h1>
+    <h1><%= @show_rant.topic %></h1>
 
     <div class="other-img">
       <%= image_tag current_user.image.url(:thumb) %>
@@ -36,21 +36,21 @@
     <br>
     <br>
 
-    <p><%= truncate(@rant.rant, :length => 300) %></p>
+    <p><%= @show_rant.rant %></p>
 
     <div class="favorite">
       <% unless favorited(@rant) %>
-        <%= link_to "Favorite", favorite_path(@rant.user, @rant) %>
+        <%= link_to "Favorite", favorite_path(@show_rant.user, @show_rant) %>
       <% else %>
-        <%= link_to "Unfavorite", unfavorite_path(@rant.user, @rant) %>
+        <%= link_to "Unfavorite", unfavorite_path(@show_rant.user, @show_rant) %>
       <% end %>
       <%= @rant.favorite_count %>
     </div>
     <br>
 
-    <% if rant_comments(@rant) %>
+    <% if rant_comments(@show_rant) %>
       <%= current_user.username + ":" %>
-      <% rant_comments(@rant).each do |comment| %>
+      <% rant_comments(@show_rant).each do |comment| %>
         <%= comment.comment %>
       <% end %>
     <% end %>

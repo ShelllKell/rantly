@@ -5,7 +5,8 @@ class RantsController < ApplicationController
   end
 
   def show
-    @rant = Rant.find(params[:id])
+    @show_rant = Rant.find(params[:id])
+    @rant = Rant.new
     @user = User.find(params[:user_id])
     @comment = Comment.new
   end

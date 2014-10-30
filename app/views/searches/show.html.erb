@@ -19,23 +19,17 @@
     <h5><%= "for:" + " " + @search.term %></h5>
     <h5><%= link_to "Back to search form", new_search_path %></h5>
     <br>
-
     <p>
 
-    <div class="topic"><%= "Rants that belong to #{@search.term.upcase}:" %></div>
+    <div class="topic"><%= "Results:" %></div>
     <% @search.users.each do |user| %>
       <% user.rants.each do |rant| %>
         <ul><%= rant.rant %></ul>
       <% end %>
     <% end %>
-    </p>
-    <p>
-
-    <div class="topic"><%= "Rants with #{@search.term.upcase} in them:" %></div>
     <% @search.rants.each do |rant| %>
       <ul><%= rant.rant %></ul>
     <% end %>
-    </p>
-  </div>
 
+  </div>
 </div>
