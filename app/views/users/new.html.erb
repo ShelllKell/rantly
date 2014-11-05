@@ -7,7 +7,7 @@
 
       <% if @user.errors.any? %>
         <% @user.errors.full_messages.each do |message| %>
-         <li> <%= message %> </li>
+          <li> <%= message %> </li>
         <% end %>
       <% end %>
 
@@ -23,6 +23,7 @@
         </div>
       </div>
       <br>
+
       <div class="doubles">
         <div class="row">
           <%= f.label :first_name %>
@@ -33,6 +34,18 @@
           <%= f.text_field :last_name %>
         </div>
       </div>
+      <br>
+
+      <div class="doubles">
+        <div class="row">
+          <%= f.label :email %>
+        </div>
+        <div class="row">
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+      </div>
+
+      <br>
 
       <div class="bio">
         <%= f.label :bio %>

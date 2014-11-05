@@ -18,10 +18,10 @@
     <h3>Latest Rants</h3>
 
     <div class="rant-paragraph">
-
       <% @rants.each do |rant| %>
-        <br>
-        <div class="topic">
+
+          <div class="topic">
+
           <p> <%= link_to rant.user.first_name, user_path(rant.user.id) %></p>
 
           <div class="other-img">
@@ -32,21 +32,21 @@
               <div class="unfollow"><%= link_to "Unfollow", user_follow_path(rant.user, @follow), method: :delete %></div>
             <% end %>
           </div>
-        </div>
-        <br>
+          </div>
+          <br>
 
-        <p> <%= link_to truncate(rant.rant, :length => 300), user_rant_path(rant.user_id, rant) %></p>
-        <br>
+          <p> <%= link_to truncate(rant.rant, :length => 300), user_rant_path(rant.user_id, rant) %></p>
+          <br>
 
-        <div class="favorite">
-          <% unless favorited(rant) %>
-            <%= link_to "Favorite", favorite_path(rant.user, rant) %>
-          <% else %>
-            <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
-          <% end %>
-          <%= rant.favorite_count %>
-        </div>
-      <% end %>
+          <div class="favorite">
+            <% unless favorited(rant) %>
+              <%= link_to "Favorite", favorite_path(rant.user, rant) %>
+            <% else %>
+              <%= link_to "Unfavorite", unfavorite_path(rant.user, rant) %>
+            <% end %>
+            <%= rant.favorite_count %>
+          </div>
+        <% end %>
 
     </div>
 

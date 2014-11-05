@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_create { set_confirmation_token(:token) }
+
   has_secure_password
 
   has_many :rants, dependent: :destroy
@@ -15,5 +17,22 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :bio, length: {maximum: 500}
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  def self.authenticate_user(email, password)
+    user = find_by_email(email)
+    if user && user.authenticate(password)
+      user if user.confirmed
+    else
+      nil
+    end
+  end
+
+  private
+
+  def set_confirmation_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
 
 end

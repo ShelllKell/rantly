@@ -16,7 +16,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(allowed_parameters)
+
     if @user.save
+      UserMailer.welcome_email(@user).deliver
+      UserMailer.confirmation_email(@user).deliver
+
       redirect_to root_path
       flash[:notice] = "Thank you for registering. Now login to get started!"
     else
@@ -35,10 +39,22 @@ class UsersController < ApplicationController
     redirect_to dashboard_path(@user)
   end
 
+
+  def account_confirmation
+    @user = User.find_by_token(params[:token])
+    if @user
+      @user.update_column(:active, true)
+      redirect_to login_path
+    else
+      redirect_to root_path
+    end
+  end
+
+
   private
 
   def allowed_parameters
-    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :frequency, :image)
+    params.require(:user).permit(:username, :password, :first_name, :last_name, :bio, :frequency, :image, :email)
   end
 
 

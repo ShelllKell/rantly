@@ -1,7 +1,19 @@
 <div class="dashboard">
   <div class="rant-input-left">
+
+        <%= image_tag current_user.image.url(:thumb) %>
+        <br>
+
+        <div class="user">
+          <%= link_to current_user.username, edit_user_path(current_user) %>
+        </div>
+        <% if alert %>
+          <%= alert %>
+        <% end %>
+        <div>
     <%= render 'rants/form' %>
   </div>
+    </div>
 
   <div class="latest-rants">
     <div class="favorite">
@@ -19,7 +31,7 @@
 
     <div class="rants">
       <div class="other-img">
-        <%= image_tag current_user.image.url(:thumb) %>
+        <%= image_tag @user.image.url(:thumb) %>
       </div>
       <h1><%= @user.frequency.capitalize + " " + "Ranter" %></h1>
       <br>

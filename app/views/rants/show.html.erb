@@ -4,7 +4,7 @@
     <br>
 
     <div class="user">
-      <%= link_to @user.username, edit_user_path(@user) %>
+      <%= link_to current_user.username, edit_user_path(current_user) %>
     </div>
     <% if alert %>
       <%= alert %>
@@ -19,13 +19,13 @@
     <h1><%= @show_rant.topic %></h1>
 
     <div class="other-img">
-      <%= image_tag current_user.image.url(:thumb) %>
+      <%= image_tag @user.image.url(:thumb) %>
     </div>
     <h4>by <%= link_to @user.first_name.capitalize, user_path(@user.id) %></h4>
 
     <div class="favorite">
       <div class="spam">
-        <%= link_to "Spam" %>
+        <%= link_to "Spam", user_rant_path, method: :patch %>
       </div>
       <div class="tweet">
         <%= link_to "Tweet" %>

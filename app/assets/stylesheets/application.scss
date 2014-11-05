@@ -355,17 +355,13 @@ img {
 }
 
 p {
-  width: 70%;
-  margin-left: 3.9rem;
-  margin-right: auto;
+  margin-left: 10rem;
   font-family: sans-serif;
   text-decoration: none;
-
 
   a {
     text-decoration: none;
     color: black;
-
   }
 }
 
@@ -409,4 +405,9 @@ p {
 .search-box {
 //  padding-bottom: .5rem;
 
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
 }

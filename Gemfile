@@ -28,3 +28,5 @@ gem 'thin'
 
 gem 'elasticsearch-rails', '~> 0.1.6'
 gem 'aws-sdk'
+gem 'figaro'
+

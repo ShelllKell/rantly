@@ -20,10 +20,17 @@ class RantsController < ApplicationController
     @rant = Rant.new(allowed_params)
 
     if @rant.save
+      UserMailer.follow_rant_email(@user, @rant_url).deliver
       redirect_to dashboard_path(params[:user_id])
     else
       redirect_to dashboard_path
     end
+  end
+
+  def update
+    @rant = Rant.find(params[:id])
+    @rant.update!({spam: true})
+    redirect_to dashboard_path
   end
 
   def destroy
