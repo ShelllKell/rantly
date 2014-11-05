@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 
-  default from: 'notifications@localhost.com'
+  default from: 'ihaterantly@gmail.com'
   default host: Rails.root
 
   def welcome_email(user)
@@ -10,7 +10,7 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "Welcome to Rant.ly")
   end
 
-  def confirmation_email(user, url)
+  def confirmation_email(user)
     @token = user.token
     @user = user
     @url = Rails.env.production? ? 'http://cryptic-ridge-6753.herokuapp.com/' : 'http://localhost:3000'
