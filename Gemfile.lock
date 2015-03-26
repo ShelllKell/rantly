@@ -28,12 +28,18 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (5.1.5)
+      execjs
+      json
     aws-sdk (1.57.0)
       aws-sdk-v1 (= 1.57.0)
     aws-sdk-v1 (1.57.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     byebug (3.4.0)
       columnize (~> 0.8)
@@ -64,6 +70,8 @@ GEM
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     elasticsearch-rails (0.1.6)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -194,8 +202,10 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   bcrypt (~> 3.1.7)
+  bootstrap-sass (~> 3.3.1)
   capybara
   coffee-rails (~> 4.0.0)
+  dotenv-rails
   elasticsearch-rails (~> 0.1.6)
   figaro
   foreman

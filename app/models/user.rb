@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
   has_many :follows, foreign_key: :follower_id
   has_many :follows, foreign_key: :followee_id
   has_attached_file :image, styles: {
-                     thumb: '100x100>'
-                    }
+                     thumb: '100x100>'   }
 
   validates :username, presence: {error: "Username required, must be unique."}
   validates :password, length: {minimum: 8}

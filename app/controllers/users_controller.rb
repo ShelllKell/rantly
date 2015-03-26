@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       UserMailer.confirmation_email(@user).deliver
 
       redirect_to root_path
-      flash[:notice] = "Thank you for registering. Now login to get started!"
+      flash[:notice] = "Please check your email for a confirmation."
     else
       render :new
     end

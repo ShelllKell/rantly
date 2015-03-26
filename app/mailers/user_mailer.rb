@@ -18,12 +18,13 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "Please confirm your email - Rant.ly")
   end
 
-  # def follow_rant_email(user, rant)
-  #   @user = user
-  #   @ranter = rant.user.username
-  #   @rant_url = user_rant_path(rant.user_id, rant)
-  #
-  #   mail(to: @user.email, subject: "New Rant from #{@ranter}")
-  # end
+  def follow_rant_email(user)
+    Follow.where(followee_id: user.id).each do |following|
+      @user = User.where(following.follower_id)
+      @user = user
+      @url = Rails.env.production? ? 'http://cryptic-ridge-6753.herokuapp.com/' : 'http://localhost:3000'
+      mail(to: @user.email, subject: "#{user.first_name} has posted a new rant!")
+    end
+  end
 
 end
